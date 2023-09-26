@@ -1,23 +1,10 @@
-import { remove } from "../../storage/index.js";
-import { logout } from "./logout.js";
+import localStorageMock from "../../mocks/LocalStorage.mock.js";
 
-/*describe('logoutButton', () => {
-  test('should call clearStorage function and redirect to "/"', () => {
-    // Mock the clearStorage function
-    const clearStorageMock = jest.fn();
+global.localStorage = localStorageMock;
 
-    // Mock the storage object
-    const storage = {
-      clearStorage: clearStorageMock,
-    };
-
-    // Simulate the button click
-    logoutButton();
-
-    // Check if the clearStorage function was called
-    expect(clearStorageMock).toHaveBeenCalled();
-
-    // Check if the location.href was set to "/"
-    expect(location.href).toBe('/');
+describe("LocalStorageMock", () => {
+  it("allows for mock call detection on storage methods", () => {
+    localStorage.removeItem("test");
+    expect(localStorage.removeItem).toHaveBeenCalled();
   });
-});*/
+});
