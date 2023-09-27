@@ -6,9 +6,7 @@ it("signup and login user", () => {
   cy.get("#loginForm .btn-success").click();
 
   cy.location().should((location) => {
-    expect(location.href).to.eq(
-      "http://127.0.0.1:5500/?view=profile&name=linda",
-    );
+    expect(location.href).to.eq("./");
 
     // expect(location.pathname).to.eq('/commands/location')
   });
