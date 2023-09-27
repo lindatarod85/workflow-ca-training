@@ -12,5 +12,5 @@ it("signup and login user", () => {
   //logout
   cy.visit("http://127.0.0.1:5500/?view=profile&name=linda");
 
-  cy.get("#logout").click();
+  cy.get(".btn-outline-warning").click();
 });
