@@ -3,7 +3,7 @@ it("signup and login user", () => {
 
   cy.get("#loginEmail").type("linda@stud.noroff.no");
   cy.get("#loginPassword").type("Test1234");
-  cy.get("#login-form .btn-success").click();
+  cy.get("#loginForm .btn-success").click();
 
   cy.location("pathname").should("eq", "/profile.html");
 
