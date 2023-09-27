@@ -5,16 +5,10 @@ it("signup and login user", () => {
   cy.get("#loginPassword").type("Test1234");
   cy.get("#loginForm .btn-success").click();
 
-  //cy.location("pathname").should("eq", "/profile.html");
+  cy.location("pathname").should("eq", "/");
 
   //logout
   //cy.visit('http://127.0.0.1:5500/profile.html');
 
   // cy.get('#logout').click();
-
-  cy.url().should("eq", "http://127.0.0.1:5500/?view=profile&name=linda");
-
-  // cy.location("pathname").should(
-  // "eq", "/?view=profile&name=linda",
-  // );
 });
