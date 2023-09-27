@@ -5,10 +5,8 @@ it("signup and login user", () => {
   cy.get("#loginPassword").type("Test1234");
   cy.get("#loginForm .btn-success").click();
 
-  cy.location().should((location) => {
-    expect(location.href).to.eq("./");
-
-    // expect(location.pathname).to.eq('/commands/location')
+  cy.location().should((loc) => {
+    expect(loc.search).to.equal("?view=profile&name=linda");
   });
 
   //cy.location("pathname").should("eq", "/?view=profile&name=linda");
