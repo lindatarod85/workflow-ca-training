@@ -12,5 +12,8 @@ it("signup and login user", () => {
 
   // cy.get('#logout').click();
 
-  cy.location("pathname").should("eq", "/?view=profile&name=linda");
+  cy.location("pathname").should(
+    "eq",
+    "http://127.0.0.1:5500/?view=profile&name=linda",
+  );
 });
