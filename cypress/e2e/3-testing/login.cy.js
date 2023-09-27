@@ -3,7 +3,7 @@ it("signup and login user", () => {
 
   cy.get('input[name="email"]').type("linda@stud.noroff.no");
   cy.get('input[name="password"]').type("Test1234");
-  cy.get(".modal-foter .btn-success").click();
+  cy.get(".btn-outline-success").click();
 
   cy.location("pathname").should("eq", "/profile.html");
 
