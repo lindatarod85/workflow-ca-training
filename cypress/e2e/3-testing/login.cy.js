@@ -10,7 +10,7 @@ it("signup and login user", () => {
   cy.location("pathname").should("eq", "/?view=profile&name=linda");
 
   //logout
-  //cy.visit('http://127.0.0.1:5500/?view=profile&name=linda');
+  cy.visit("http://127.0.0.1:5500/?view=profile&name=linda");
 
-  // cy.get('#logout').click();
+  cy.get("#logout").click();
 });
