@@ -1,4 +1,4 @@
-cy.on("uncaught:exception", () => false);
+//cy.on("uncaught:exception", () => false);
 
 it("signup and login user", () => {
   cy.visit("/");
