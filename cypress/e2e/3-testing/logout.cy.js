@@ -3,5 +3,5 @@ it("Logs out user", () => {
 
   cy.get(".btn-outline-warning").click();
 
-  cy.location("pathname").should("eq", "http://127.0.0.1:5500/index.html");
+  cy.location("pathname").should("eq", "http://127.0.0.1:5500");
 });
