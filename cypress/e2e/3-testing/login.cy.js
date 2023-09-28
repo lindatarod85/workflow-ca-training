@@ -6,9 +6,9 @@ it("signup and login user", () => {
   cy.get("#registerPassword").type("Test12345");
   cy.get("#registerAvatar").type("https://i.pravatar.cc/300");
 
-  //cy.get("#registerForm .btn-success").click();
+  cy.get("#registerForm .btn-success").click();
 
-  cy.get("#registerForm .btn-outline-success").click();
+  //cy.get("#registerForm .btn-outline-success").click();
 
   cy.get("#loginEmail").type("linda85@stud.noroff.no");
   cy.get("#loginPassword").type("Test12345");
