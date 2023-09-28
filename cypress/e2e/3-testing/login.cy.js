@@ -9,8 +9,8 @@ it("signup and login user", () => {
 
   cy.get("#registerForm .btn-outline-success").click();
 
-  cy.get("#loginEmail").type("linda85@stud.noroff.no");
-  cy.get("#loginPassword").type("Test12345");
+  cy.get("#loginEmail").type("linda@stud.noroff.no");
+  cy.get("#loginPassword").type("Test1234");
   cy.get("#loginForm .btn-success").click();
 
   cy.location("pathname").should(
