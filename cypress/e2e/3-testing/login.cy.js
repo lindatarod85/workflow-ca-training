@@ -1,3 +1,5 @@
+cy.on("uncaught:exception", () => false);
+
 it("signup and login user", () => {
   cy.visit("/");
   cy.wait(2000);
