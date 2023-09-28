@@ -1,12 +1,6 @@
 it("signup and login user", () => {
   cy.visit("http://127.0.0.1:5500/index.html");
 
-  //cy.get("#registerName").type("Name");
-  //cy.get("#registerEmail").type("linda85@stud.noroff.no");
-  //cy.get("#registerPassword").type("Test12345");
-  //cy.get("#registerAvatar").type("https://i.pravatar.cc/300");
-  //cy.get("#registerForm .btn-success").click();
-
   cy.get("#registerForm .btn-outline-success").click();
 
   cy.get("#loginEmail").type("linda@stud.noroff.no");
@@ -20,7 +14,7 @@ it("signup and login user", () => {
 
   //logout
 
-  cy.get(".btn-outline-warning").click();
+  cy.get(".btn-outline-warning .me-2").click();
 
   cy.location("pathname").should("eq", "http://127.0.0.1:5500/index.html");
 });
