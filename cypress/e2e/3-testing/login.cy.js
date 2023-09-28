@@ -7,6 +7,8 @@ it("signup and login user", () => {
   cy.get("#loginPassword").type("Test1234");
   cy.get("#loginForm .btn-success").click();
 
+  cy.wait(3000);
+
   cy.location("pathname").should(
     "eq",
     "http://127.0.0.1:5500/?view=profile&name=linda",
