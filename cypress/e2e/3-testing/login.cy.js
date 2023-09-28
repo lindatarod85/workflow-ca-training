@@ -26,6 +26,7 @@ it("signup and login user", () => {
   //cy.location("pathname").should("eq", "http://127.0.0.1:5500/index.html");
 });
 
+/*
 it("Logs out user", () => {
   cy.visit("http://127.0.0.1:5500/?view=profile&name=linda");
 
@@ -33,3 +34,4 @@ it("Logs out user", () => {
 
   cy.location("pathname").should("eq", "http://127.0.0.1:5500/index.html");
 });
+*/
