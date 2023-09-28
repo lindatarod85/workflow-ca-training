@@ -1,22 +1,30 @@
 it("signup and login user", () => {
-  cy.visit("http://127.0.0.1:5500/index.html");
+  cy.visit("/");
+  cy.wait(2000);
 
-  cy.get("#registerForm .btn-outline-success").click();
+  cy.get("#registerForm [data-auth=login]").click();
+
+  cy.wait(2000);
 
   cy.get("#loginEmail").type("linda@stud.noroff.no");
   cy.get("#loginPassword").type("Test1234");
   cy.get("#loginForm .btn-success").click();
 
-  cy.wait(3000);
+  cy.wait(2000);
 
-  cy.location("pathname").should(
-    "eq",
-    "http://127.0.0.1:5500/?view=profile&name=linda",
-  );
+  cy.window().then((win) => {
+    const token = win.localStorage.getItem("token");
+    expect(token).to.not.be.null;
+  });
 
   //logout
 
   cy.get(".text-end .btn-outline-warning").click();
 
-  cy.location("pathname").should("eq", "http://127.0.0.1:5500/index.html");
+  cy.wait(2000);
+
+  cy.window().then((win) => {
+    const token = win.localStorage.getItem("token");
+    expect(token).to.be.null;
+  });
 });
