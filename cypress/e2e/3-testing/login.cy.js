@@ -14,7 +14,7 @@ it("signup and login user", () => {
 
   //logout
 
-  cy.get(".btn-outline-warning .me-2").click();
+  cy.get(".text-end .btn-outline-warning").click();
 
   cy.location("pathname").should("eq", "http://127.0.0.1:5500/index.html");
 });
