@@ -17,5 +17,5 @@ export async function login(email, password) {
     return profile;
   }
 
-  //throw new Error(response.statusText)
+  throw new Error(response.statusText);
 }
