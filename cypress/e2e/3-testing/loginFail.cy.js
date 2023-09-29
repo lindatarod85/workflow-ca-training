@@ -1,4 +1,5 @@
-it("User is shown message if login credentials are wrong", () => {
+// Tries to login user with invalid email - alert displays
+it("Tries to login user with invalid email", () => {
   cy.visit("/");
   cy.wait(2000);
 
@@ -6,15 +7,31 @@ it("User is shown message if login credentials are wrong", () => {
 
   cy.wait(2000);
 
-  cy.get("#loginEmail").type("invalidEmail");
+  cy.get("#loginEmail").type("linda@invalidEmail");
   cy.get("#loginPassword").type("invalidPassword");
   cy.get("#loginForm .btn-success").click();
 
-  cy.get(response.statusText)
-    .should("be.visible")
-    .and("contain", "Username is required");
+  cy.on("window:alert", (str) => {
+    expect(str).to.equal("Only Noroff student or teacher emails are valid.");
+  });
+});
 
-  cy.get(response.statustext)
-    .should("be.visible")
-    .and("contain", "Password must contain at least 8 characters");
+//Tries to login user with invalid password - alert displays
+it("Tries to login user with invalid password", () => {
+  cy.visit("/");
+  cy.wait(2000);
+
+  cy.get("#registerForm [data-auth=login]").click();
+
+  cy.wait(2000);
+
+  cy.get("#loginEmail").type("linda@stud.noroff.no");
+  cy.get("#loginPassword").type("invalidPassword");
+  cy.get("#loginForm .btn-success").click();
+
+  cy.on("window:alert", (str) => {
+    expect(str).to.equal(
+      "Either your username was not found or your password is incorrect",
+    );
+  });
 });
